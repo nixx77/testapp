@@ -4,14 +4,14 @@ class ClientsController < ApplicationController
 #  skip_before_filter :verify_authenticity_token
 
   soap_action "CheckClient",
-              :args   => :string,
-              :return => :string,
-              :to     => :check_client,
+              :args         => :string,
+              :return       => {"CheckClientResult" => :string},
+              :to           => :check_client,
               :response_tag => "CheckClientResponse"
 
   def check_client
     Rails.logger.debug params[:value]
-    soap_response = "1;2334;Ok"
+    soap_response = { "CheckClientResult" => "1;76.25;Ok" }
     render :soap => soap_response
     #Rails.logger.debug params[:response.to_s]
     #headers["Content-Length"]
