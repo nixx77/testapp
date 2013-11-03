@@ -43,7 +43,10 @@ gem 'unicorn'
 # Use Capistrano for deployment
 gem 'capistrano'
 
+gem 'wasabi'
 gem 'savon', github: 'savonrb/savon'
+
+gem 'wash_out'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
